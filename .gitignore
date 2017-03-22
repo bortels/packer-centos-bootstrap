@@ -1,2 +1,7 @@
 packer_cache
-*.ova
+output
+caches
+output-vmware-iso
+metadata.json
+.DS_Store
+build-*
