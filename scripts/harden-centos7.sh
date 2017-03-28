@@ -28,7 +28,7 @@ echo "install tipc /bin/true" > /etc/modprobe.d/tipc.conf
 # 2.2.1.1 Ensure time synchronization is in use - Level 1 Server (Not Scored)
 yum install -y ntp ntpdate
 systemctl enable ntpd
-ntpdate pool.ntp.org
+ntpdate 10.102.2.100
 systemctl start ntpd
 
 # 5.1.1 Ensure cron daemon is enabled - Level 1 Server (Scored):
@@ -209,10 +209,13 @@ restrict ::1
 
 # Use public servers from the pool.ntp.org project.
 # Please consider joining the pool (http://www.pool.ntp.org/join.html).
-server 0.pool.ntp.org iburst
-server 1.pool.ntp.org iburst
-server 2.pool.ntp.org iburst
-server 3.pool.ntp.org iburst
+#server 0.pool.ntp.org iburst
+#server 1.pool.ntp.org iburst
+#server 2.pool.ntp.org iburst
+#server 3.pool.ntp.org iburst
+# DI Time servers
+server 10.102.2.100
+server 10.104.2.100
 
 #broadcast 192.168.1.255 autokey	# broadcast server
 #broadcastclient			# broadcast client
