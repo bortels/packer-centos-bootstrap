@@ -507,8 +507,8 @@ sed -i '15 s/password    sufficient    pam_unix.so sha512 shadow nullok try_firs
 # 5.4.1.2 Ensure minimum days between password changes is 7 or more - Level 1 Server (Scored):
 sed -i '/^PASS_MAX_DAYS/ c\PASS_MAX_DAYS   90' /etc/login.defs
 sed -i '/^PASS_MIN_DAYS/ c\PASS_MIN_DAYS   7' /etc/login.defs
-chage -m 7 -M 90 root
-chage -m 7 -M 90 ea
+#chage -m 7 -M 90 root
+#chage -m 7 -M 90 ea
 
 # 4.2.4 Ensure permissions on all logfiles are configured - Level 1 Server (Scored):
 find /var/log -type f -exec chmod g-wx,o-rwx {} +
