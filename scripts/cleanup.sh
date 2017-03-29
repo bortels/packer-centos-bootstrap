@@ -1,7 +1,8 @@
 service salt-minion stop
-rm /etc/salt/pki/minion/minion.pem
-rm /etc/salt/pki/minion/minion.pub
-cat /dev/null > /etc/salt/minion_id
+rm -f /etc/salt/pki/minion/minion.pem
+rm -f /etc/salt/pki/minion/minion.pub
+rm -f /etc/salt/minion_id
+rm -f /etc/salt/minion.d/*
 chkconfig salt-minion on
 
 sed -i '/HWADDR/d' /etc/sysconfig/network-scripts/ifcfg-eth0
